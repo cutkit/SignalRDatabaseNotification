@@ -16,7 +16,7 @@
         };
         // Start the connection.
         $.connection.hub.start().done(function () {
-            alert("connection started");
+            console.log("connected!");
             getAllMessages();
         }).fail(function (e) {
             alert(e);
@@ -32,8 +32,8 @@
             dataType: 'html'
         }).done(function (result) {
             tbl.empty().append(result);
-        }).fail(function () {
-
+        }).fail(function (e) {
+            alert(e);
         });
     }
 
